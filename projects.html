@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects</title>
+</head>
+
+<body>
+    <div id="header"></div>
+    <div class="container">
+        <h2 class="section-title">Projects</h2>
+        <div class="row">
+            <div class="col-md-6 mb-4">
+                <div class="project-card">
+                    <h3>E-Commerce website</h3>
+                    <p class="project-tech"> * HTML * CSS * JavaScript * Bootstrap</p>
+                    <p class="project-description">
+                        Developed a full-stack e-commerce platform with features like user authentication,
+                        product management, and order processing. Implemented RESTful APIs and
+                        integrated payment gateway.
+                    </p>
+                    <div class="project-links">
+                        <a href="https://websolutionshub.in/" class="btn btn-outline-primary">View Demo</a>
+
+                    </div>
+                </div>
+            </div>
+                <div class="col-md-6 mb-4">
+                    <div class="project-card">
+                        <h3>QUIZ WEBSITE</h3>
+                        <p class="project-tech"> * HTML * CSS * JavaScript </p>
+                        <p class="project-description">
+                            An interactive and responsive web-based quiz app built with HTML, CSS, and JavaScript. Users can test their knowledge on various topics, receive instant feedback, and track their scores.
+                        </p>
+                        <div class="project-links">
+                            <a href="https://quizweb-nine.vercel.app/" class="btn btn-outline-primary">View Demo</a>
+
+                        </div>
+                    </div>
+                </div>
+              <div class="col-md-6 mb-4">
+                    <div class="project-card">
+                        <h3>WEATHER WEBSITE</h3>
+                        <p class="project-tech"> * HTML * CSS * JavaScript </p>
+                        <p class="project-description">
+                           WeatherNow is a simple and elegant weather forecast web application built using HTML, CSS, and JavaScript. It allows users to check the current weather of any city in real time by fetching data from a public weather API (like OpenWeatherMap).
+                        </p>
+                        <div class="project-links">
+                            <a href="https://wheatherweb-flame.vercel.app/" class="btn btn-outline-primary">View Demo</a>
+
+                        </div>
+                    </div>
+                </div>  
+            </div>
+        </div>
+        <div id="footer"></div>
+        <script>
+            // Function to load HTML files into elements
+            function loadComponent(id, file) {
+                fetch(file)
+                    .then(response => response.text())
+                    .then(data => document.getElementById(id).innerHTML = data);
+            }
+
+            // Load Header and Footer
+            loadComponent("header", "header.html");
+            loadComponent("footer", "footer.html");
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

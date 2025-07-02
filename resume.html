@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Resume Krish Jain</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        
+        .download-btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .download-btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div id="header"></div>
+
+    <h1>My Resume</h1>
+    <div class="view">
+        <!-- Embed Resume PDF -->
+        <iframe src="KARAN-SAPRA.pdf" width="100%" height="650px"></iframe>
+    </div>
+
+    <!-- Download Button -->
+    <a class="download-btn" href="KARAN-SAPRA.pdf" download>Download Resume</a>
+<div id="footer"></div>
+    <script>
+        // Function to load HTML files into elements
+        function loadComponent(id, file) {
+            fetch(file)
+            .then(response => response.text())
+            .then(data => document.getElementById(id).innerHTML = data);
+        }
+        
+        // Load Header and Footer
+        loadComponent("header", "header.html");
+        loadComponent("footer", "footer.html");
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

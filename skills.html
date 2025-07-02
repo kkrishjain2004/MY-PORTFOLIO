@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skills</title>
+</head>
+<body>
+    
+    <div id="header"></div>
+    <section id="skills" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Skills</h2>
+            <div class="row g-4">
+                <!-- Backend Development -->
+                <div class="col-md-4">
+                    <div class="skill-category">
+                        <h3><i class="fas fa-server"></i> Front-End Development</h3>
+                        <div class="skill-list">
+                            <div class="skill-item">
+                                <i class="fab fa-html5"></i>
+                                <span>HMTL</span>
+                            </div>
+                            <div class="skill-item">
+                               <i class="fab fa-css3-alt"></i>
+                                <span>CSS</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-js"></i>
+                                <span>JavaScript</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Database & Tools -->
+                <div class="col-md-4">
+                    <div class="skill-category">
+                        <h3><i class="fas fa-database"></i>  Frameworks</h3>
+                        <div class="skill-list">
+                            <div class="skill-item">
+                                <i class="fas fa-bootstrap"></i>
+                                <span>Bootstrap</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Additional Skills -->
+                <div class="col-md-4">
+                    <div class="skill-category">
+                        <h3><i class="fas fa-tools"></i> Additional Skills</h3>
+                        <div class="skill-list">
+                            <div class="skill-item">
+                                <i class="fab fa-github"></i>
+                                <span>Git</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fab fa-github"></i>
+                                <span>GitHub</span>
+                            </div>
+                            <div class="skill-item">
+                               <i class="fas fa-paint-brush"></i> 
+                                <span>Canva</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-file-word"></i>
+                                <span>MS WORD</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-file-excel"></i>
+                                <span>EXCEL</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-file-powerpoint"></i>
+                                <span>MS POWERPOINTL</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <div id="footer"></div>
+    
+    <script>
+        // Function to load HTML files into elements
+        function loadComponent(id, file) {
+            fetch(file)
+            .then(response => response.text())
+            .then(data => document.getElementById(id).innerHTML = data);
+        }
+        
+        // Load Header and Footer
+        loadComponent("header", "header.html");
+        loadComponent("footer", "footer.html");
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Animate skill progress bars when they come into view
+        document.addEventListener('DOMContentLoaded', function() {
+            const progressBars = document.querySelectorAll('.progress-bar');
+            
+            // Set initial width to 0
+            progressBars.forEach(bar => {
+                const width = bar.style.width;
+                bar.style.width = '0';
+                
+                // Store the target width as a data attribute
+                bar.setAttribute('data-width', width);
+            });
+            
+            // Function to check if element is in viewport
+            function isInViewport(element) {
+                const rect = element.getBoundingClientRect();
+                return (
+                    rect.top >= 0 &&
+                    rect.left >= 0 &&
+                    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+                );
+            }
+            
+            // Function to animate progress bars
+            function animateProgressBars() {
+                progressBars.forEach(bar => {
+                    if (isInViewport(bar) && bar.style.width === '0px') {
+                        const targetWidth = bar.getAttribute('data-width');
+                        bar.style.width = targetWidth;
+                    }
+                });
+            }
+            
+            // Run on scroll
+            window.addEventListener('scroll', animateProgressBars);
+            
+            // Run once on load
+            animateProgressBars();
+        });
+    </script>
+</body>
+</html>
